@@ -51,7 +51,7 @@ var gaugeTemp = new LinearGauge({
   barWidth: 10,
 }).draw();
   
-var gaugeTemp = new LinearGauge({
+var gaugeTemp1 = new LinearGauge({
   renderTo: 'gauge-temperature-node3',
   width: 120,
   height: 400,
@@ -103,8 +103,8 @@ var gaugeTemp = new LinearGauge({
 // Create Humidity Gauge
 var gaugeHum = new RadialGauge({
   renderTo: 'gauge-humidity', 
-  width: 250,
-  height: 250,
+  width: 200,
+  height: 200,
   units: "Humidity (%)",
   minValue: 0,
   maxValue: 100,
@@ -147,8 +147,8 @@ var gaugeHum = new RadialGauge({
 
 var gaugeHum1 = new RadialGauge({
   renderTo: 'gauge-humidity-node3',
-  width: 250,
-  height: 250,
+  width: 200,
+  height: 200,
   units: "Humidity (%)",
   minValue: 0,
   maxValue: 100,
@@ -199,9 +199,11 @@ function getReadings(){
       var temp = myObj.temperature;
       var hum = myObj.humidity;
       var hum1 = myObj.humidity1;
+      var temp1 = myObj.temperature1;
       gaugeTemp.value = temp;
       gaugeHum.value = hum;
       gaugeHum1.value = hum1;
+      gaugeTemp1.value = temp1;
     }
   }; 
   xhr.open("GET", "/readings", true);
